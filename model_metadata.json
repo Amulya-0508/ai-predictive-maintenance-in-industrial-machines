@@ -1,0 +1,16 @@
+{
+  "features": [
+    "temperature",
+    "vibration",
+    "current",
+    "rpm",
+    "operating_hours",
+    "machine_age"
+  ],
+  "classes": [
+    "Critical",
+    "Normal",
+    "Warning"
+  ],
+  "accuracy": 0.9979166666666667
+}
