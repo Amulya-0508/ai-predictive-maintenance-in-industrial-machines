@@ -2,8 +2,10 @@ import os,time,joblib,numpy as np,pandas as pd,streamlit as st,plotly.graph_obje
 st.set_page_config(page_title="AI Predictive Maintenance",page_icon="⚙️",layout="wide")
 st.title("⚙️ AI-Based Predictive Maintenance for Industrial Machines")
 st.caption("Software prototype using simulated industrial sensor telemetry")
-MODEL_PATH="models/predictive_maintenance_model.pkl"
-if not os.path.exists(MODEL_PATH): st.error("Model not found. Run: python src/train_model.py"); st.stop()
+MODEL_PATH="predictive_maintenance_model.pkl"
+if not os.path.exists(MODEL_PATH):
+    st.error("Model file not found in the repository.")
+    st.stop()
 model=joblib.load(MODEL_PATH)
 if "history" not in st.session_state: st.session_state.history=[]
 if "sim_step" not in st.session_state: st.session_state.sim_step=0
